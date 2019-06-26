@@ -3,28 +3,28 @@
 
 int main()
 {
-	struct stuff req;
-	req.a = 15;
-	req.b = 25;
-	req.flag = 0;
-	int shmid;	
-	char *data="pehli fursat me nikal";
-	char *str;
+	struct stuff *req,*str;
+	int shmid, i=0;	
 
-	shmid = shmget(KEY, 1024 ,0666|IPC_CREAT);
+	shmid = shmget(KEY, 1024, 0666|IPC_CREAT);
 	if(!shmid){
 		perror("shmget error\n");
 		exit(EXIT_FAILURE);
 	}
-	while(str == NULL){
-		sleep(2);
-		str = (char *)shmat(shmid, (void *)0,0);
-		if(str == (void *)-1){
-			perror("shmget error\n");
-			exit(EXIT_FAILURE);
-		}
+
+	str = (struct stuff *)shmat(shmid, (void *)0,0);
+	if( str == (void *)-1 ){
+		perror("shmat error\n");
+		exit(EXIT_FAILURE);
 	}
-	printf("get data : %s : %ld\n",str,strlen(str));
-	shmdt(str);
+
+	while(str->flag != 1){
+		printf("read data : %s : flag : %d \n",str->data,str->flag);
+		i++;
+	}
+	if(shmdt(str)== -1){
+		perror("shmdet error\n");
+		exit(EXIT_FAILURE);
+	}
 return 0;
 }

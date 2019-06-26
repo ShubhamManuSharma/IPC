@@ -13,4 +13,4 @@ server: $(OBJ)
 .PTHONY:clean
 
 clean:
-	rm -rf $(OBJ) client 
+	rm -rf $(OBJ) server 
