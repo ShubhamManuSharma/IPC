@@ -1,0 +1,1 @@
+cmd_/home/shubham/fun/threads/kernel_pro/hellokernel.ko := ld -r -m elf_x86_64  -z max-page-size=0x200000 -T ./scripts/module-common.lds --build-id  -o /home/shubham/fun/threads/kernel_pro/hellokernel.ko /home/shubham/fun/threads/kernel_pro/hellokernel.o /home/shubham/fun/threads/kernel_pro/hellokernel.mod.o

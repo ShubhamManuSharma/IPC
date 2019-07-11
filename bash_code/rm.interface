@@ -1,0 +1,24 @@
+vconfig  rem ens256.100 ; vconfig rem ens256.200 ; vconfig rem ens256.300 ; vconfig rem ens256.400 ; vconfig rem ens256.500 ; vconfig rem ens256.600 ; vconfig rem ens256.700 ; vconfig rem ens256.800 ; vconfig  rem ens256.900 ; ifconfig -a ; 
+
+vconfig add ens256 100 ; ip link set up ens256.100 ; vconfig add ens256 200 ; ip link set up ens256.200 ; vconfig add ens256 300 ; ip link set up ens256.300 ; vconfig add ens256 400 ; ip link set up ens256.400 ; vconfig add ens256 500 ; ip link set up ens256.500 ; vconfig add ens256 600 ; ip link set up ens256.600 ; vconfig add ens256 700 ; ip link set up ens256.700 ; vconfig add ens256 800 ; ip link set up ens256.800 ; vconfig add ens256 900 ; ip link set up ens256.900 ; ifconfig ens256.100 ;ifconfig ens256.200 ;ifconfig ens256.100 ;
+ifconfig ens256.800 ;
+ifconfig ens256.300 ;
+ifconfig ens256.400 ;
+ifconfig ens256.500 ;
+ifconfig ens256.600 ;
+ifconfig ens256.700 ;
+ifconfig ens256.900 ;
+
+dhclient -v ens256.200 ; dhclient -v ens256.300 ; dhclient -v ens256.400 ; dhclient -v ens256.500 ; dhclient -v ens256.600 ; dhclient -v ens256.700 ; dhclient -v ens256.800 ; ifconfig ;
+
+ifconfig ens256.100 ;
+ifconfig ens256.200 ;
+ifconfig ens256.100 ;
+ifconfig ens256.800 ;
+ifconfig ens256.300 ;
+ifconfig ens256.400 ;
+ifconfig ens256.500 ;
+ifconfig ens256.600 ;
+ifconfig ens256.700 ;
+ifconfig ens256.900 ;
+
